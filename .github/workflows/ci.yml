@@ -66,5 +66,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: app
-          path: $RUNNER_TEMP/build/IBHGithubAction.ipa
+          path: ${{ runner.temp }}/build/IBHGithubAction.ipa
           retention-days: 3
