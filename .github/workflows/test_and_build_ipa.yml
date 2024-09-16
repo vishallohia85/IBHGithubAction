@@ -26,24 +26,11 @@ jobs:
           -destination 'platform=iOS Simulator,name=iPhone 15,OS=latest' \
           -resultBundlePath $RUNNER_TEMP/test-results
 
-      - name: Convert test results to HTML
-        run: |
-          mkdir -p $RUNNER_TEMP/html-reports
-          # Attempt to generate HTML report with available options
-          xcrun xcresulttool --list --result-bundle $RUNNER_TEMP/test-results
-
       - name: Upload test results as artifact
         uses: actions/upload-artifact@v3
         with:
           name: test-results
           path: ${{ runner.temp }}/test-results
-          retention-days: 3
-
-      - name: Upload HTML test reports as artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: html-test-results
-          path: ${{ runner.temp }}/html-reports/test-results.html
           retention-days: 3
 
       - name: Install the Apple certificate and provisioning profile
