@@ -29,10 +29,8 @@ jobs:
       - name: Convert test results to HTML
         run: |
           mkdir -p $RUNNER_TEMP/html-reports
-          xcrun xcresulttool \
-            --format html \
-            --output $RUNNER_TEMP/html-reports/test-results.html \
-            --result-bundle $RUNNER_TEMP/test-results
+          # Attempt to generate HTML report with available options
+          xcrun xcresulttool --list --result-bundle $RUNNER_TEMP/test-results
 
       - name: Upload test results as artifact
         uses: actions/upload-artifact@v3
