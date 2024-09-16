@@ -69,4 +69,3 @@ jobs:
           name: app
           path: ${{ runner.temp }}/build/IBHGithubAction.ipa
           retention-days: 3
-
