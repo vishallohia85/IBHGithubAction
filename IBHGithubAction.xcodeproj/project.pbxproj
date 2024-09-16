@@ -12,19 +12,10 @@
 		00CD28F92C9836A500F4CCAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00CD28F82C9836A500F4CCAC /* Assets.xcassets */; };
 		00CD28FC2C9836A500F4CCAC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00CD28FB2C9836A500F4CCAC /* Preview Assets.xcassets */; };
 		00CD29062C9836A500F4CCAC /* IBHGithubActionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CD29052C9836A500F4CCAC /* IBHGithubActionTests.swift */; };
-		00CD29102C9836A500F4CCAC /* IBHGithubActionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CD290F2C9836A500F4CCAC /* IBHGithubActionUITests.swift */; };
-		00CD29122C9836A500F4CCAC /* IBHGithubActionUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CD29112C9836A500F4CCAC /* IBHGithubActionUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		00CD29022C9836A500F4CCAC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 00CD28E92C9836A300F4CCAC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 00CD28F02C9836A300F4CCAC;
-			remoteInfo = IBHGithubAction;
-		};
-		00CD290C2C9836A500F4CCAC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 00CD28E92C9836A300F4CCAC /* Project object */;
 			proxyType = 1;
@@ -41,7 +32,6 @@
 		00CD28FB2C9836A500F4CCAC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		00CD29012C9836A500F4CCAC /* IBHGithubActionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IBHGithubActionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00CD29052C9836A500F4CCAC /* IBHGithubActionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBHGithubActionTests.swift; sourceTree = "<group>"; };
-		00CD290B2C9836A500F4CCAC /* IBHGithubActionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IBHGithubActionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00CD290F2C9836A500F4CCAC /* IBHGithubActionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBHGithubActionUITests.swift; sourceTree = "<group>"; };
 		00CD29112C9836A500F4CCAC /* IBHGithubActionUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBHGithubActionUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -55,13 +45,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		00CD28FE2C9836A500F4CCAC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		00CD29082C9836A500F4CCAC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -86,7 +69,6 @@
 			children = (
 				00CD28F12C9836A300F4CCAC /* IBHGithubAction.app */,
 				00CD29012C9836A500F4CCAC /* IBHGithubActionTests.xctest */,
-				00CD290B2C9836A500F4CCAC /* IBHGithubActionUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -165,24 +147,6 @@
 			productReference = 00CD29012C9836A500F4CCAC /* IBHGithubActionTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		00CD290A2C9836A500F4CCAC /* IBHGithubActionUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 00CD291B2C9836A500F4CCAC /* Build configuration list for PBXNativeTarget "IBHGithubActionUITests" */;
-			buildPhases = (
-				00CD29072C9836A500F4CCAC /* Sources */,
-				00CD29082C9836A500F4CCAC /* Frameworks */,
-				00CD29092C9836A500F4CCAC /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				00CD290D2C9836A500F4CCAC /* PBXTargetDependency */,
-			);
-			name = IBHGithubActionUITests;
-			productName = IBHGithubActionUITests;
-			productReference = 00CD290B2C9836A500F4CCAC /* IBHGithubActionUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -197,10 +161,6 @@
 						CreatedOnToolsVersion = 15.2;
 					};
 					00CD29002C9836A500F4CCAC = {
-						CreatedOnToolsVersion = 15.2;
-						TestTargetID = 00CD28F02C9836A300F4CCAC;
-					};
-					00CD290A2C9836A500F4CCAC = {
 						CreatedOnToolsVersion = 15.2;
 						TestTargetID = 00CD28F02C9836A300F4CCAC;
 					};
@@ -221,7 +181,6 @@
 			targets = (
 				00CD28F02C9836A300F4CCAC /* IBHGithubAction */,
 				00CD29002C9836A500F4CCAC /* IBHGithubActionTests */,
-				00CD290A2C9836A500F4CCAC /* IBHGithubActionUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -237,13 +196,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		00CD28FF2C9836A500F4CCAC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		00CD29092C9836A500F4CCAC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -270,15 +222,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		00CD29072C9836A500F4CCAC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				00CD29102C9836A500F4CCAC /* IBHGithubActionUITests.swift in Sources */,
-				00CD29122C9836A500F4CCAC /* IBHGithubActionUITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -286,11 +229,6 @@
 			isa = PBXTargetDependency;
 			target = 00CD28F02C9836A300F4CCAC /* IBHGithubAction */;
 			targetProxy = 00CD29022C9836A500F4CCAC /* PBXContainerItemProxy */;
-		};
-		00CD290D2C9836A500F4CCAC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 00CD28F02C9836A300F4CCAC /* IBHGithubAction */;
-			targetProxy = 00CD290C2C9836A500F4CCAC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -518,40 +456,6 @@
 			};
 			name = Release;
 		};
-		00CD291C2C9836A500F4CCAC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.pll.IBHGithubActionUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = IBHGithubAction;
-			};
-			name = Debug;
-		};
-		00CD291D2C9836A500F4CCAC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.pll.IBHGithubActionUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = IBHGithubAction;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -578,15 +482,6 @@
 			buildConfigurations = (
 				00CD29192C9836A500F4CCAC /* Debug */,
 				00CD291A2C9836A500F4CCAC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		00CD291B2C9836A500F4CCAC /* Build configuration list for PBXNativeTarget "IBHGithubActionUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				00CD291C2C9836A500F4CCAC /* Debug */,
-				00CD291D2C9836A500F4CCAC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
