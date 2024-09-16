@@ -20,7 +20,6 @@ jobs:
           -scheme "IBHGithubAction" \
           -sdk iphonesimulator \
           -destination 'platform=iOS Simulator,name=iPhone 14,OS=latest' \
-          -skip-testing:IBHGithubActionUITests \
           -resultBundlePath $RUNNER_TEMP/test-results
 
       - name: Upload test results as artifact
