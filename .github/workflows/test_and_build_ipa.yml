@@ -24,8 +24,7 @@ jobs:
           -scheme "IBHGithubAction" \
           -sdk iphonesimulator \
           -destination 'platform=iOS Simulator,name=iPhone 15,OS=latest' \
-          -resultBundlePath $RUNNER_TEMP/test-results \
-          -timeout 400
+          -resultBundlePath $RUNNER_TEMP/test-results
 
       - name: Convert test results to HTML
         run: |
