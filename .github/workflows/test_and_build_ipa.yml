@@ -81,6 +81,19 @@ jobs:
             exit 1
           fi
 
+      - name: Upload to TestFlight using altool
+        env:
+          APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY }}
+          APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+          APP_STORE_CONNECT_PRIVATE_KEY: ${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }}
+        run: |
+          xcrun altool --upload-app \
+          --type ios \
+          --apiKey $APP_STORE_CONNECT_API_KEY \
+          --apiIssuer $APP_STORE_CONNECT_ISSUER_ID \
+          --output-format xml \
+          --file $RUNNER_TEMP/build/IBHGithubAction.ipa
+
       - name: Upload application as artifact
         uses: actions/upload-artifact@v3
         with:
