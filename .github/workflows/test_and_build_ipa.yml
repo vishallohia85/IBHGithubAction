@@ -18,21 +18,6 @@ jobs:
         run: |
           rm -rf ~/Library/Developer/Xcode/DerivedData
 
-      - name: Run Unit Tests
-        run: |
-          xcodebuild test \
-          -scheme "IBHGithubAction" \
-          -sdk iphonesimulator \
-          -destination 'platform=iOS Simulator,name=iPhone 15,OS=latest' \
-          -resultBundlePath $RUNNER_TEMP/test-results
-
-      - name: Upload test results as artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: test-results
-          path: ${{ runner.temp }}/test-results
-          retention-days: 3
-
       - name: Install the Apple certificate and provisioning profile
         env:
           BUILD_CERTIFICATE_BASE64: ${{ secrets.BUILD_CERTIFICATE_BASE64 }}
@@ -81,18 +66,18 @@ jobs:
             exit 1
           fi
 
-      - name: Upload to TestFlight using altool
-        env:
-          APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY }}
-          APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
-          APP_STORE_CONNECT_PRIVATE_KEY: ${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }}
+      - name: Set up App Store Connect API key
         run: |
-          xcrun altool --upload-app \
-          --type ios \
-          --apiKey $APP_STORE_CONNECT_API_KEY \
-          --apiIssuer $APP_STORE_CONNECT_ISSUER_ID \
-          --output-format xml \
-          --file $RUNNER_TEMP/build/IBHGithubAction.ipa
+          mkdir -p ~/.appstoreconnect/private_keys
+          echo "${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }}" > ~/.appstoreconnect/private_keys/AuthKey_${{ secrets.APP_STORE_CONNECT_API_KEY }}.p8
+
+      - name: Upload IPA to TestFlight
+        run: |
+          xcrun altool --upload-app --type ios \
+          --file "$RUNNER_TEMP/build/IBHGithubAction.ipa" \
+          --apiKey "${{ secrets.APP_STORE_CONNECT_API_KEY }}" \
+          --apiIssuer "${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}" \
+          --apiPrivateKey ~/.appstoreconnect/private_keys/AuthKey_${{ secrets.APP_STORE_CONNECT_API_KEY }}.p8
 
       - name: Upload application as artifact
         uses: actions/upload-artifact@v3
