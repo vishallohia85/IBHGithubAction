@@ -60,6 +60,7 @@ jobs:
       - name: Build archive with diagnostics
         run: |
           xcodebuild -workspace "IBHGithubAction.xcworkspace" \
+          -scheme "IBHGithubAction" \
           -archivePath $RUNNER_TEMP/IBHGithubAction.xcarchive \
           -sdk iphoneos \
           -configuration Release \
